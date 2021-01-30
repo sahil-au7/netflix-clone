@@ -13,6 +13,7 @@ const Navbar = () => {
     //   window.removeEventListener("scroll");
     // };
   });
+
   return (
     <div className={`navbar ${show && "navbar__black"}`}>
       <img
