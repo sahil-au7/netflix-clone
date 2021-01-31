@@ -31,8 +31,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      console.log(movie);
-      movieTrailer(movie?.name || movie?.original_name || "")
+      console.table(movie);
+      movieTrailer(movie?.name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
@@ -59,7 +59,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
           />
         ))}
       </div>
-      {/* {console.table("hello=====>", trailerUrl)} */}
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
