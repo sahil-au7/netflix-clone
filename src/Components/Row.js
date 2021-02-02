@@ -24,6 +24,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       setMovies((await response).data.results);
       return response;
     };
+
     fetchData();
   }, [fetchUrl]);
 
